@@ -5,14 +5,8 @@ import { useRouter } from "next/navigation"
 import { createClientSupabaseClient } from "@/lib/supabase"
 import { RefreshCw, Trash2, ArrowLeft, Plus, Clock, Calendar } from "lucide-react"
 import { generateRandomCode } from "@/lib/utils"
-
-interface Code {
-  id: string
-  code: string
-  created_at: string
-  expires_at: string
-  active: boolean
-}
+import { Code } from "@/lib/types"
+
 
 export default function CodesPage() {
   const [codes, setCodes] = useState<Code[]>([])

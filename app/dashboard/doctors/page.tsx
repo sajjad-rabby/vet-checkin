@@ -4,13 +4,8 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { createClientSupabaseClient } from "@/lib/supabase"
 import { PlusIcon, Trash2, Edit, X, Check } from "lucide-react"
-
-interface Doctor {
-  id: string
-  name: string
-  active: boolean
-  created_at: string
-}
+import { Doctor } from "@/lib/types"
+
 
 export default function DoctorsPage() {
   const [doctors, setDoctors] = useState<Doctor[]>([])
@@ -338,7 +333,7 @@ export default function DoctorsPage() {
                                 <Edit size={16} />
                               </button>
                               <button
-                                onClick={() => toggleDoctorStatus(doctor.id, doctor.active)}
+                                onClick={() => toggleDoctorStatus(doctor.id, doctor.active ?? false)}
                                 className={`p-2 rounded-md transition-all duration-200 border ${
                                   doctor.active
                                     ? "bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 border-amber-700/50"

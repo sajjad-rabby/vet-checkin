@@ -6,33 +6,8 @@ import { createClientSupabaseClient } from "@/lib/supabase"
 import PetDetails from "@/components/pet-details"
 import { ArrowLeft, Edit } from "lucide-react"
 import Link from "next/link"
-
-interface Pet {
-  id: string
-  owner_name: string
-  pet_name: string
-  species: string
-  is_sick: boolean
-  sick_appointment: boolean
-  general_info: string | null
-  coughing: boolean
-  sneezing: boolean
-  vomiting: boolean
-  diarrhea: boolean
-  status: string
-  doctor: {
-    name: string
-  } | null
-  diet_info: string | null
-  prevention_type: string | null
-  discuss_risks: boolean | null
-  recent_vet_clinic: string | null
-  recent_vet_reason: string | null
-  records_permission: boolean | null
-  medication_details: string | null
-  supplement_details: string | null
-  cancelled: boolean
-}
+import { Pet } from "@/lib/types"
+
 
 export default function PetDetailsPage() {
   const [pet, setPet] = useState<Pet | null>(null)

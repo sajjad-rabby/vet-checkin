@@ -6,51 +6,12 @@ import { createClientSupabaseClient } from "@/lib/supabase"
 import { RefreshCw, UserPlus, FileText, Trash2, RotateCcw } from "lucide-react"
 import Link from "next/link"
 import { generateRandomCode } from "@/lib/utils"
+import { Pet, Doctor, Code, ClinicData } from "@/lib/types"
 
-// Update the Pet interface to include the new fields
-interface Pet {
-  id: string
-  owner_name: string
-  pet_name: string
-  species: string
-  is_sick: boolean
-  sick_appointment: boolean
-  general_info: string | null
-  coughing: boolean
-  sneezing: boolean
-  vomiting: boolean
-  diarrhea: boolean
-  created_at: string
-  status: string
-  doctor_id: string | null
-  doctor: {
-    name: string
-  } | null
-  cancelled: boolean
-  cancelled_doctor: string | null
-  cancelled_at: string | null
-}
-
-interface Doctor {
-  id: string
-  name: string
-  active: boolean
-}
-
-interface Code {
-  id: string
-  code: string
-  created_at: string
-  expires_at: string
-  active: boolean
-}
-
-interface ClinicData {
-  id: string
-  email: string
-  name?: string
-  [key: string]: any
-}
+// Update the Pet interface to include the new fields
+
+
+
 
 // Define a type for the view filter
 type ViewFilter = "active" | "cancelled" | "deleted"

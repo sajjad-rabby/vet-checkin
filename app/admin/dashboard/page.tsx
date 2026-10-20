@@ -4,28 +4,9 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { createClientSupabaseClient } from "@/lib/supabase"
 import { RefreshCw, Edit, Trash2, Plus, Info, X, Check } from "lucide-react"
-
-interface Clinic {
-  id: string
-  email: string
-  password: string
-  name?: string
-  contact_person?: string
-  address?: string
-  city?: string
-  state?: string
-  zip?: string
-  phone?: string
-  created_at: string
-}
-
-interface ClinicStats {
-  totalPets: number
-  activePets: number
-  doctorsCount: number
-  activeDoctors: number
-  petsToday: number
-}
+import { Clinic, ClinicStats } from "@/lib/types"
+
+
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("clinics")

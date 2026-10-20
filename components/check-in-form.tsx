@@ -4,37 +4,9 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { createClientSupabaseClient } from "@/lib/supabase"
-
-interface Doctor {
-  id: string
-  name: string
-}
-
-interface Pet {
-  id: string
-  owner_name: string
-  pet_name: string
-  species: string
-  is_sick: boolean
-  sick_appointment: boolean
-  general_info: string | null
-  coughing: boolean
-  sneezing: boolean
-  vomiting: boolean
-  diarrhea: boolean
-  doctor_id?: string
-  diet_info?: string
-  prevention_type?: string
-  discuss_risks?: boolean
-  recent_vet_clinic?: string
-  recent_vet_reason?: string
-  records_permission?: boolean
-  medication_details?: string
-  supplement_details?: string
-  cancelled?: boolean
-  cancelled_doctor?: string
-  cancelled_at?: string
-}
+import { Pet, Doctor } from "@/lib/types"
+
+
 
 interface CheckInFormProps {
   pet?: Pet

@@ -6,18 +6,8 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { createClientSupabaseClient } from "@/lib/supabase"
 import { ArrowLeft, Save, Building2, User, Phone, MapPin } from "lucide-react"
-
-interface ClinicProfile {
-  id: string
-  email: string
-  name?: string
-  contact_person?: string
-  address?: string
-  city?: string
-  state?: string
-  zip?: string
-  phone?: string
-}
+import { ClinicProfile } from "@/lib/types"
+
 
 export default function ProfilePage() {
   const [profile, setProfile] = useState<ClinicProfile | null>(null)

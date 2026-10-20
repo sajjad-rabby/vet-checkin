@@ -3,35 +3,10 @@
 import { useState, useRef } from "react"
 import { Check } from "lucide-react"
 
+import type { Pet } from "@/lib/types"
+
 interface PetDetailsProps {
-  pet: {
-    id: string
-    owner_name: string
-    pet_name: string
-    species: string
-    is_sick: boolean
-    sick_appointment: boolean
-    general_info: string | null
-    coughing: boolean
-    sneezing: boolean
-    vomiting: boolean
-    diarrhea: boolean
-    status: string
-    doctor?: {
-      name: string
-    } | null
-    diet_info?: string | null
-    prevention_type?: string | null
-    discuss_risks?: boolean | null
-    recent_vet_clinic?: string | null
-    recent_vet_reason?: string | null
-    records_permission?: boolean | null
-    medication_details?: string | null
-    supplement_details?: string | null
-    cancelled?: boolean
-    cancelled_doctor?: string | null
-    cancelled_at?: string | null
-  }
+  pet: Pet
 }
 
 export default function PetDetails({ pet }: PetDetailsProps) {
